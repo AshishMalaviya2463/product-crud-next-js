@@ -38,7 +38,7 @@ export const useValidation = () => {
 
     if (String(password).trim().length <= 0) {
       errors.password = "Please enter password.";
-    } else if (existingUser?.password !== password) {
+    } else if (existingUser?.password && existingUser?.password !== password) {
       errors.password = "Invalid password.";
     }
 
